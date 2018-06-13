@@ -1,0 +1,131 @@
+.events {
+	background: $celery;
+	width: 70%;
+	height: 100%;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:1;
+	padding-top:7em;
+	@include xsMobileBP() {
+		width: 88%;
+	}
+	.page-label {
+		position:absolute;
+	    top: 4em;
+	    right: 0;
+		span {
+			@include transform(rotate(90deg));
+			display: block;
+		}
+		@include xsMobileBP() {
+			font-size:0.875em;
+			right:-0.5em;
+		}
+	}
+
+	article {
+		width: 100%;
+		border: 4px solid white;
+
+		@include xsMobileBP() {
+			border: 1px solid white;
+		}
+
+		.image-container {
+			border-bottom: 4px solid white;
+
+			@include xsMobileBP() {
+				border-bottom: 1px solid white;
+			}
+			position:relative;
+			.archived {
+				display:inline-block;
+				padding: 1em 1.6em;
+				background: rgba(0,0,0,0.5);
+				border-radius: 50%;
+				position:absolute;
+				top:1em;
+				right:1em;
+				font-family: 'Sharp Grotesk',sans-serif;
+				font-weight: bold;
+				font-size:0.7em;
+				text-transform:lowercase;
+				@include transform(rotate(10deg));
+			}
+		}
+
+		.event-details {
+			padding: 2em;
+			background: rgba(0,0,0,0.15);
+
+			@include xsMobileBP() {
+				padding: 2em 1.3em;
+			}
+			.header {
+				margin-bottom:1em;
+			}
+			h2 {
+				margin-bottom:0.7em;
+			}
+			span {
+				display: block;
+				font-family: 'Sharp Grotesk',sans-serif;
+				font-weight: bold;
+				text-transform: lowercase;
+				line-height:1.3em;
+				margin-bottom:1em;
+				font-size:1.4em;
+
+				label {
+					font-family: 'Gotham Book', sans serif;
+					font-size:0.6em;
+					margin-right: 0.5em;
+				}
+			}
+
+			@include xsMobileBP() {
+				h2 {
+					margin-bottom: 2rem;
+				}
+				span {
+					font-size:1.3em;
+				}
+
+				p {
+					font-size: 1em;
+				}
+			}
+		}
+
+		.cta-container {
+			margin-top: 2em;
+
+			.secondary {
+				margin-left: 1em;
+			}
+
+			@include xsMobileBP() {
+				button {
+					display: block;
+					&.primary {
+						width:100%;
+					}
+					&.secondary {
+						margin-left: 0;
+						margin-top:1em;
+						text-align:center;
+						width:100%;
+					}
+				}
+			}
+		}
+	}
+
+	.label {
+		margin-bottom: 2em;
+		display: block;	
+	}
+}

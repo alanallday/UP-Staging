@@ -1,0 +1,140 @@
+html {
+	color: $white;
+	background: $black;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+	font-family: 'Gotham Book', sans-serif;
+
+	@include xsMobileBP() {
+		font-size: 15px;
+	}
+}
+
+html,body {
+	overflow-y: hidden;
+	height:100%;
+	width:100%;
+}
+
+*, div {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	font-family: 'Sharp Grotesk',sans-serif;
+	font-weight: bold;
+	font-size:0.9em;
+	@include transition(color 0.1s ease-in-out);
+	&:hover {
+		color: $pink;
+	}
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: $pink;
+    background: $black;
+}
+
+::selection {
+    color: $pink; 
+    background: $black;
+}
+
+hr {
+	margin: 3em 0;
+	border: none;
+    border-bottom: 1px solid white;
+
+    &.invisible { opacity: 0; }
+}
+
+.logo {
+	@include transition(transform 0.3s ease-in-out);
+	@include transform(rotate3d(0, 0, 0, 0deg));
+	cursor: pointer;
+
+	&:hover {
+		@include transform(rotate3d(0, 1, 0, 180deg));
+	    @include transition(transform 0.3s ease-in-out);
+	}
+}
+h3,span.label {
+	font-family: 'Sharp Grotesk',sans-serif;
+	font-weight: bold;
+	text-transform:lowercase;
+	margin-bottom: 0.5em;	
+}
+
+h2 {
+	font-family: 'Quarto',serif;
+	font-size:3em;
+	margin-bottom:1em;
+
+	@include xsMobileBP() {
+		font-size:2.4em;
+	}
+}
+
+p {
+	line-height: 1.5em;
+	margin-bottom: 1em;
+}
+
+img {
+	width: 100%;
+	margin: 0;
+	display: block;
+}
+.main,.events {
+	padding: 3em 5em;
+	position:relative;
+  	-webkit-overflow-scrolling: touch;
+
+	@include desktopOnlyBP() {
+		&:hover {
+			z-index:5 !important;
+			-webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.33);
+			-moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.33);
+			box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.33);
+		}
+	}
+
+	@include mobileBP() {
+		padding: 3em;
+		-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.33);
+		-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.33);
+		box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.33);
+	}
+
+	@include xsMobileBP() {
+		padding: 2em 1.5em;
+	}
+}
+
+.active-page {
+	z-index: 5 !important;
+}
+
+.subscribe {
+	padding: 3em 5em;
+  	-webkit-overflow-scrolling: touch;
+
+	@include mobileBP() {
+		padding: 3em;
+	}
+
+	@include xsMobileBP() {
+		padding: 2em 1.5em;
+	}
+}
+
+
+
+// .active-page {
+// 	z-index:5 !important;
+// 	-webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.33);
+// 	-moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.33);
+// 	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.33);
+// }

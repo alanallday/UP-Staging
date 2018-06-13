@@ -1,0 +1,91 @@
+.main {
+	background: $blue;
+	width: 80%;
+	position:absolute;
+	top:0;
+	left: 50px;
+	height: 100%;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	z-index:2;
+	@include xsMobileBP() {
+		width: 88%;
+	}
+	@include mobileBP() {
+		left:0;
+	}
+
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	    color: #60C5FF;
+	    opacity: 1; /* Firefox */
+	}
+
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	    color: #60C5FF;
+	}
+
+	::-ms-input-placeholder { /* Microsoft Edge */
+	    color: #60C5FF;
+	}
+
+	.button.special {
+		background: darken($orange,10%);
+
+		&:hover {
+		background: $orange;			
+		}
+	}
+	.site-credits {
+		text-align:right;
+		font-size: 0.8em;
+		text-transform: lowercase;
+		margin-top:4rem;
+		line-height:1.4em;
+		hr {
+			margin-bottom: 1em;
+		}
+	}
+
+	img.hero {
+		width: 50%;
+	    position: relative;
+	    top: -3em;
+	    left: 50%;
+	    z-index:2;
+
+	    @include xsMobileBP() {
+		    width: 70%;
+		    top: -5.5em;
+		    left: 28%;
+		}
+	}
+	.logo {
+		margin-bottom:3em;
+		width: 130px;
+	}
+	h1 {
+		font-size: 7em;
+		font-family: 'Quarto',serif;
+		font-weight: light;
+		z-index:3;
+		position:relative;
+		span {
+			font-family: 'Sharp Grotesk',sans-serif;
+			font-weight: bold;
+			font-size:0.7em;
+		}
+
+		@include xsMobileBP() {
+			font-size:4em;
+		}
+	}
+
+	p {
+		font-size:1.5em;
+		line-height: 1.4em;
+
+		@include xsMobileBP() {
+			font-size:1em;
+		}
+	}
+}

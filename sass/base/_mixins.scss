@@ -1,0 +1,44 @@
+@mixin transform($x) {
+  -webkit-transform: $x;
+     -moz-transform: $x;
+       -o-transform: $x;
+          transform: $x;
+}
+
+@mixin transition($what) {
+    -webkit-transition: $what;
+    -moz-transition:    $what;
+    -ms-transition:     $what;
+    -o-transition:      $what;
+    transition:         $what;
+}
+
+@mixin mobileBP() {
+  @media screen and (max-width: 960px) {  
+    @content;
+  }
+}
+
+@mixin xsMobileBP() {
+  @media screen and (max-width: 700px) {  
+    @content;
+  }
+}
+
+@mixin desktopOnlyBP() {
+  @media screen and (min-width: 960px) {  
+    @content;
+  }
+}
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 960px) {
+  .mobile {
+    display:block;
+  }
+
+  .desktop {
+    display: none;
+  }
+}
